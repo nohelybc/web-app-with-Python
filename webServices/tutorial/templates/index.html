@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holitas world!!</title>
+</head>
+
+<body>
+    <h2>Holiwis {{ username }} </h2>
+    <p>
+        Este es mi fantabuloso template para mi temeraria web app con Flask!
+    </p>
+
+    {% if secret_message %}
+    <p>
+        Puedes ver el secreto??
+    </p>
+
+    {% else %}
+    <p>
+        Tú no puedes ver el secreto >:c
+    </p>
+
+    {% endif %}
+</body>
+
+</html>
