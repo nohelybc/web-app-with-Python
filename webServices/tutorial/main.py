@@ -1,11 +1,14 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return "<h1>Hola gente linda de internet (desde mi servidor de Flask! :D)</h1>"
+    name = 'Nohely, la más otaka'
+    secret_message = True
+
+    return render_template('index.html', username=name, secret_message=secret_message)
 
 
 if __name__ == '__main__':
