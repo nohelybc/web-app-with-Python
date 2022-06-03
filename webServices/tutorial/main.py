@@ -3,6 +3,17 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
+@app.before_request
+def before_request():
+    print("Antes de la petición")
+
+
+@app.after_request
+def after_request(response):
+    print("Después de la petición")
+    return response
+
+
 @app.route('/')
 def index():
     name = 'Nohely, la más otaka'
@@ -10,6 +21,11 @@ def index():
 
     return render_template('index.html', username=name,
                            secret_message=secret_message)
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 
 @app.route('/usuario/<last_name>/<name>')
