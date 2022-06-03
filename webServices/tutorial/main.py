@@ -12,6 +12,11 @@ def index():
                            secret_message=secret_message)
 
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
 @app.route('/usuario/<last_name>/<name>')
 def user(last_name, name):
     return 'Hola, ' + last_name + name
