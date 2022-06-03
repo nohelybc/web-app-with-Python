@@ -1,34 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
-    <title>Holitas world!!</title>
-</head>
+{% block content %}
 
-<body>
-    <h2>Holiwis {{ username }} </h2>
-    <p>
-        Este es mi fantabuloso template para mi temeraria web app con Flask!
-    </p>
+<h2>Holiwis {{ username }} </h2>
+<p>
+    Este es mi fantabuloso template para mi temeraria web app con Flask!
+</p>
 
-    {% if secret_message %}
-    <p>
-        Puedes ver el secreto??
-    </p>
+{% if secret_message %}
+<p>
+    Puedes ver el secreto??
+</p>
 
-    {% else %}
-    <p>
-        Tú no puedes ver el secreto >:c
-    </p>
+{% else %}
+<p>
+    Tú no puedes ver el secreto >:c
+</p>
 
-    {% endif %}
 
-    <img src="{{ url_for('static', filename='images/pieck.jpg')" alt="imagen de diosa pieck">
-</body>
+{% endif %}
 
-</html>
+{% endblock %}
